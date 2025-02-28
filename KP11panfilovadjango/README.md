@@ -10,3 +10,4 @@
 10. python3 manage.py startapp posts
 11. pip3 freeze > req.txt
 12. python3 manage.py makemigrations
+13. python3  manage.py startapp books
