@@ -11,3 +11,11 @@
 11. pip3 freeze > req.txt
 12. python3 manage.py makemigrations
 13. python3  manage.py startapp books
+14. git init
+15. pip3 freeze > req.txt
+16. rm -rf env
+17. git add .
+18. git commit -m "first commit"
+19. git push -u origin main/ git push -u repot4 main
+20. git branch -M main
+21. git remote add origin
