@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("posts.urls")),
     path('articles/', include('articles.urls')),
-    path('', include('pages.urls')),
+    #path('', include('pages.urls')),
 ]
 from django.conf.urls import handler404, handler500
 

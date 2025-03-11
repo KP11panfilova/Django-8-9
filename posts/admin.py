@@ -1,9 +1,10 @@
 from django.contrib import admin
 from posts.models import *
-from .models import  Author, Genre, Book
+from .models import  Author, Genre, Book, Post
 
 admin.site.register(Tag)
 admin.site.register(Post)
+
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'genre', 'is_available')
