@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profile</title>
+</head>
+<body>
+    <h1>Profile</h1>
+    <p>Email: {{ user.email }}</p>
+    <p>Last login: {{ user.last_login }}</p>
+    <a href="{% url 'password_change' %}">Change password</a>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/styles.css' %}">
+</body>
+</html>

@@ -1,5 +1,5 @@
 """
-URL configuration for core project.
+URL configuration for blog project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -14,20 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
-from django.contrib.auth.views import LogoutView
+
+
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include("posts.urls")),
-    path('articles/', include('articles.urls')),
-    #path('', include('pages.urls')),
-    #path('blog/', include('blog.urls')),
-    path('logout/', LogoutView.as_view(), name='logout'),
-    
+    path('profile/', views.profile, name='profile'),
 ]
-from django.conf.urls import handler404, handler500
-
-handler404 = 'pages.views.handler404'
-handler500 = 'pages.views.handler500'

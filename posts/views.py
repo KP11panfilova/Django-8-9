@@ -5,6 +5,17 @@ from .models import Post
 from django.views.generic import ListView
 from django.views.generic import DetailView
 from django.contrib.auth.decorators import login_required
+from .forms import PostForm
+
+def create_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('blog:index')
+    else:
+        form = PostForm()
+    return render(request, 'blog/create_post.html', {'form': form})
 
 @login_required
 def create_post(request):
@@ -31,7 +42,7 @@ class PostListView(ListView):
 # Create your views here.
 def index(request):
     posts = Post.objects.all()
-    return render(request, "posts/index.html", {'posts':posts, 'title':"Hello isip28!"})
+    return render(request, "posts/index.html", 'blog/index.html', {'posts':posts, 'title':"Hello isip28!"})
 
 def authorization(request):
     return HttpResponse("<h1>Authorization</h1>")
